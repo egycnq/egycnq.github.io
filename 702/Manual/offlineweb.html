@@ -1,0 +1,54 @@
+<html>
+    <style>
+        body{color: white; background-color: black; background-attachment:fixed; background-size:100%; background-repeat:no-repeat;}
+    </style>
+<body onload="go()"></body>
+<head>
+<title> PS4-Web-Offline-Activator for 7.02 FW </title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+</head>
+
+<script>
+function print(){}
+
+var scriptCode = '';
+
+function preloadScripts(lst)
+{
+    for(var i = 0; i < lst.length; i++)
+    {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', lst[i], false);
+        xhr.send('');
+        scriptCode += xhr.responseText + '\n';
+    }
+}
+
+function done(){}
+
+window.midExploit = function()
+{
+    preloadScripts(['/common/blob.js', '/common/jb.js', '/common/preloader.js', 'payload.js', '/common/loader.js', 'frontend.js'], go);
+}
+
+window.postExploit = function()
+{
+    history.pushState({}, '', '.');
+    setTimeout(function() //update the screen one last time...
+    {
+        eval.call(window, scriptCode);
+        done();
+    }, 100);
+};
+</script>
+<script src="common/utils.js"></script>
+<script src="common/int64.js"></script>
+<script src="common/ps4.js"></script>
+<button id="input1" onfocus="handle2()"></button>
+<button id="input2"></button>
+<button id="input3" onfocus="handle2()"></button>
+<select id="select1">
+<option value="value1">Value1</option>
+</select>
+</body>
+</html>
